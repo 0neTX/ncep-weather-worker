@@ -9,8 +9,13 @@ C_varwave="var_HTSGW=on&var_WVDIR=on&var_WVPER=on"
 # note: it's required to keep subregions separated since 
 # wave GFS service is not cutting by subregion as atmos GFS service is doing (each grade in lon = 4 pixels). 
 # differences between layers/bands size in rows/columns triggered errors while reading files
-C_atmossubregion="subregion=&leftlon=-10&rightlon=28&toplat=45&bottomlat=32"
-C_wavesubregion="subregion=&leftlon=-10&rightlon=27.75&toplat=45&bottomlat=32"
+# europe
+#C_atmossubregion="subregion=&leftlon=-10&rightlon=28&toplat=45&bottomlat=32"
+#C_wavesubregion="subregion=&leftlon=-10&rightlon=27.75&toplat=45&bottomlat=32"
+# caribe
+C_atmossubregion="subregion=&leftlon=-100&rightlon=-60&toplat=34&bottomlat=15"
+C_wavesubregion="subregion=&leftlon=-100&rightlon=-59.75&toplat=34&bottomlat=15"
+
 
 # TIMEFRAME
 # Forecast files goes from f000 to f384 (1hs-to-1hs and 3hs-to-3hs depending on service/date)
