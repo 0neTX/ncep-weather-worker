@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # create temp folder (if does not exists)
 mkdir -p ./data/nomads_ncep_noaa
 # get last forecast and historical info
