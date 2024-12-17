@@ -1,0 +1,14 @@
+name: ncep-weather-worker
+services:
+    ncep-weather-worker:
+        volumes:
+            - './data/nomads_ncep_noaa:/tmp/datastore'
+            - './scripts/config.sh:/scripts/config.sh'
+        stdin_open: true
+        tty: true
+        container_name: ncep-weather-worker
+        image: 0netx/ncep-weather-worker:1.0.3
+        build:
+          context: .
+          dockerfile: Dockerfile
+        env_file: "worker.env"

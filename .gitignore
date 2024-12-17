@@ -1,0 +1,2 @@
+worker.env
+data/nomads_ncep_noaa/images/*.grb
