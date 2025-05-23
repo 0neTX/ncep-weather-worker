@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t geotekne/ncep-weather-worker:1.0.0 .
+docker build -t 0netx/ncep-weather-worker:latest .

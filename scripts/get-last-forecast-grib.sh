@@ -88,7 +88,9 @@ for prediction in $predictionslist; do
 	# GFS ATMOS
 	atmosurl="$gfsatmos?file=$fileatmos&$varatmos&$atmossubregion&dir=$diratmos"
         echo "---> downloading atmos-forecast-$ddate-$dhour-$prediction.grb"
-	curl --silent $atmosurl --output $workingfolder/$tmpfolder/atmos-forecast-$ddate-$dhour-$prediction.grb
+	echo Requesting url:
+	echo $atmosurl
+	curl $atmosurl --output $workingfolder/$tmpfolder/atmos-forecast-$ddate-$dhour-$prediction.grb
         # checkfile with gdalinfo
 	gdalinfo $workingfolder/$tmpfolder/atmos-forecast-$ddate-$dhour-$prediction.grb > /dev/null 2>&1
 	if [[ $? = 1 ]]; then
@@ -100,8 +102,9 @@ for prediction in $predictionslist; do
 	# GFS WAVE
 	waveurl="$gfswave?file=$filewave&$varwave&$wavesubregion&dir=$dirwave"
         echo "---> downloading wave-forecast-$ddate-$dhour-$prediction.grb"
-	#echo $waveurl
-	curl --silent $waveurl --output $workingfolder/$tmpfolder/wave-forecast-$ddate-$dhour-$prediction.grb
+	echo Requesting url:
+	echo $waveurl
+	curl $waveurl --output $workingfolder/$tmpfolder/wave-forecast-$ddate-$dhour-$prediction.grb
         # checkfile with gdalinfo
 	gdalinfo $workingfolder/$tmpfolder/wave-forecast-$ddate-$dhour-$prediction.grb > /dev/null 2>&1
 	if [[ $? = 1 ]]; then
